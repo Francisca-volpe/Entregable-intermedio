@@ -1,14 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ESTUDIANTES</title>
-</head>
-<body>
-    
-    <h2> Listado de estudiantes:</h2>
+{% extends "App/Template.html" %}
 
-</body>
-</html>
+{% load static %}
+
+{% block titulo %}
+<h1 class="mb-5">Estudiantes:</h1>
+{% endblock %}
+
+{% block contenido_que_cambia %}
+<h1>Probando donde se ve esto</h1>
+{% endblock %}
+
+{% block subtitulo %}
+
+<h3> Este es un subtitulo!</h3>
+<p> aca continua mi subtitulo</p>
+
+{% endblock %}
