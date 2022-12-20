@@ -24,9 +24,8 @@ def form_estudiantes (request):
         if form.is_valid():
             info=form.cleaned_data
             nombre=info["nombre"]
-            apellido=info["apellido"]
-            materia_cursada=info["materia_cursada"]
-            estudiante=Estudiantes(nombre=nombre, apellido=apellido, materia_cursada=materia_cursada)
+            materia=info["materia"]
+            estudiante=Estudiantes(nombre=nombre, materia=materia)
             estudiante.save()
             return render (request, "App/inicio.html", {"mensaje": "Datos guardados correctamente."})
 
@@ -43,9 +42,8 @@ def form_tutores (request):
         if form.is_valid():
             info=form.cleaned_data
             nombre=info["nombre"]
-            apellido=info["apellido"]
-            materia_dictada =info["materia_dictada"]
-            tutor=Tutores(nombre=nombre, apellido=apellido, materia_dictada=materia_dictada)
+            materia =info["materia"]
+            tutor=Tutores(nombre=nombre, materia=materia)
             tutor.save()
             return render (request, "App/inicio.html", {"mensaje": "Datos guardados correctamente."})
 
@@ -72,5 +70,5 @@ def form_notas (request):
             return render (request, "App/NotasForm.html", {"mensaje": "Datos inválidos"})
 
     else:
-        formulario=TutoresFormulario()
+        formulario=NotasFormulario()
         return render (request, "App/NotasForm.html", {"form":formulario})
